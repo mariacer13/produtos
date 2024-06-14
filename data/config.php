@@ -3,9 +3,11 @@ class Connection
 {
     static function _connect()
     {
+        $dsn = "mysql:host=dbproductosml.mysql.database.azure.com;dbname=db_personaproducto";
+        $username = "administrador";
+        $password = "12345678ml_";
         try {
-            $connection = new PDO("mysql:host=dbproductosml.mysql.database.azure.com,
-            dbname=db_personaproducto", "administrador", "12345678ml_");
+            $connection = new PDO($dsn, $username, $password);
             //echo "conectado";
             return $connection;
         } catch (\Throwable $th) {
