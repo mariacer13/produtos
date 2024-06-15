@@ -4,7 +4,7 @@ class Connection
     static function _connect()
     {
         $options = array(
-        PDO::MYSQL_ATTR_SSL_CA => '/var/www/html/BaltimoreCyberTrustRoot.crt.pem'
+        PDO::MYSQL_ATTR_SSL_CA => '../ssl/BaltimoreCyberTrustRoot.crt.pem'
 );
         $DB_DSN = getenv('db_dsn');
         $DB_USERNAME = getenv('db_username');
