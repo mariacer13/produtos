@@ -14,7 +14,7 @@ class Connection
         $password =$DB_PASSWORD;
         
         try {
-            $connection = new PDO('mysql:host=dbproductosml.mysql.database.azure.com;port=3306;dbname=db_personaproducto', 'administrador', '12345678ml_');
+            $connection = new PDO('mysql:host=dbproductosml.mysql.database.azure.com;dbname=db_personaproducto', 'administrador', '12345678ml_');
             //echo "conectado";
             return $connection;
         } catch (\Throwable $th) {
