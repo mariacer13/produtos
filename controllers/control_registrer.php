@@ -5,7 +5,7 @@ $datos = array(
     'names' => $_POST['names'],
     'dni' => $_POST['dni'],
     'email' => $_POST['email'],
-    'pass' => SED::encryption($_POST['password']),
+    'pass' => $_POST['password'],
     'status' => 'A',
 );
 
