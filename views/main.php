@@ -1,24 +1,14 @@
+<?php include_once "../templeates_login_register/header.php" ?>
+
+<?php include_once "../template_index/nav.php" ?>
+
 <?php
-session_start();
-include_once "../templeates_login_register/header.php";
-include_once "../template_index/nav.php";
-include_once "../data/crudEntry.php";
-
-if (!isset($_SESSION['user'])) {
-    header("Location: login.php"); // Redirigir a la página de inicio de sesión si no hay sesión activa
-    exit();
-}
-
-$userData = CrudEntry::_sessionUser($_SESSION['user']);
-
-if ($userData) {
-    foreach ($userData as $value) {
-        $names = $value['PER_NAMES'];
-        $dni = $value['PER_DNI'];
-        $email = $value['PER_EMAIL'];
+foreach (CrudEntry::_sessionUser($_SESSION['user']) as $key => $value) {
+    $names = $value['PER_NAMES'];
+    $dni = $value['PER_DNI'];
+    $email = $value['PER_EMAIL'];
 ?>
-
-<div class="container">
+<div class="cotainer">
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
@@ -36,12 +26,4 @@ if ($userData) {
         </div>
     </div>
 </div>
-
-<?php
-    }
-} else {
-    echo "Error al obtener los datos del usuario.";
-}
-?>
-
 <?php } ?>
