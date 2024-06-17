@@ -9,7 +9,7 @@ function register() {
 function save(datos) {
     $.ajax({
         type: "POST",
-        url: "../controllers/control_registrer.php",
+        url: "https://miapp.azurewebsites.net/controllers/control_registrer.php",
         data: datos,
         cache: false,
         success: function (r) {
