@@ -6,7 +6,7 @@ include_once "../data/sha.php";
 
 $datos = array(
     'email' => $_POST['emaillogin'],
-    'pass' => SED::encryption($_POST['passwordlogin']),
+    'pass' => $_POST['passwordlogin'],
 );
 
 if (!CrudEntry::_startData($datos)) {
